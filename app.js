@@ -1,10 +1,7 @@
-
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
-require('dotenv').config();
 const path = require('path');
-
 
 // Database
 const db = require('./config/database');
@@ -17,7 +14,7 @@ db.authenticate()
 const app = express();
 
 // Handlebars
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Body Parser
